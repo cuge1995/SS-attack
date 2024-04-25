@@ -1,7 +1,7 @@
 # SS-attack
 official Pytorch implementation of paper 'Improving transferability of 3D adversarial attacks with scale and shear transformations', Information Sciences, 2024
 
-![samples](imgs/ss.png)
+![samples](c3_pipeline.png)
 
 ### Introduction
 As deep learning models become increasingly integral to various 3D applications, concerns about their vulnerability to adversarial attacks grow in tandem. This paper addresses the challenge of enhancing the transferability of 3D adversarial attacks, a critical aspect for evaluating model robustness across diverse scenarios. We propose a novel approach leveraging scale and shear transformations to generate adversarial examples that exhibit improved transferability across multiple 3D models.
