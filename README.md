@@ -6,8 +6,8 @@ official Pytorch implementation of paper 'Improving transferability of 3D advers
 ### Introduction
 As deep learning models become increasingly integral to various 3D applications, concerns about their vulnerability to adversarial attacks grow in tandem. This paper addresses the challenge of enhancing the transferability of 3D adversarial attacks, a critical aspect for evaluating model robustness across diverse scenarios. We propose a novel approach leveraging scale and shear transformations to generate adversarial examples that exhibit improved transferability across multiple 3D models.
 Our methodology involves carefully integrating scale and shear transformations into the adversarial perturbation generation process with only a marginal increase in computational time. 
-The proposed attack method operates within the Carlini-Wagner (CW) optimization framework. For each iteration, it employs two hyperparameters: $p_{a}$, determining the probability of transforming the input point cloud, and 
-$p_{s}$, deciding whether to shear or scale the point cloud. Limited to scaling and shearing transformations, Scale and Shear (SS) attack seamlessly integrates with established attack methods, enhancing flexibility and compatibility in adversarial attacks on 3D models. Extensive experiments show that the SS attack proposed in this paper can be seamlessly combined with the existing state-of-the-art (SOTA) 3D point cloud attack methods to form more powerful attack methods, and the SS attack improves the transferability over 3.6 times compared to the baseline. Moreover, while substantially outperforming the baseline methods, the SS attack achieves SOTA transferability under various defenses. 
+The proposed attack method operates within the Carlini-Wagner (CW) optimization framework. For each iteration, it employs two hyperparameters: p_{a}p_{a}, determining the probability of transforming the input point cloud, and 
+p_{s}p_{s}, deciding whether to shear or scale the point cloud. Limited to scaling and shearing transformations, Scale and Shear (SS) attack seamlessly integrates with established attack methods, enhancing flexibility and compatibility in adversarial attacks on 3D models. Extensive experiments show that the SS attack proposed in this paper can be seamlessly combined with the existing state-of-the-art (SOTA) 3D point cloud attack methods to form more powerful attack methods, and the SS attack improves the transferability over 3.6 times compared to the baseline. Moreover, while substantially outperforming the baseline methods, the SS attack achieves SOTA transferability under various defenses. 
 
 ### Citation
 if you find our work useful in your research, please consider citing:
@@ -41,12 +41,12 @@ if you find our work useful in your research, please consider citing:
 ```
 cd baselines
 ```
-For untargeted aof attack:
+For untargeted ss-aof attack:
 ```
 NCCL_DEBUG=INFO CUDA_VISIBLE_DEVICES=0,1,2,3,4 python -m torch.distributed.launch --nproc_per_node=5 --master_port=29502 attack_scripts/untargeted_ssaof_attack.py --process_data --model=pointnet --batch_size=128
 ```
 
-For untargeted advpc attack:
+For untargeted ss-advpc attack:
 ```
 NCCL_DEBUG=INFO CUDA_VISIBLE_DEVICES=0,1,2,3,4 python -m torch.distributed.launch --nproc_per_node=5 --master_port=29502 attack_scripts/untargeted_ssadvpc_attack.py --process_data --model=pointnet --batch_size=32
 ```
